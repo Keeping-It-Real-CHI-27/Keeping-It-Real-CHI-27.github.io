@@ -1,3 +1,3 @@
-# Keepin' It Real - CHI Play '26
+# Keepin' It Real - CHI 2027
 
-Website for the Keepin' It Real workshop at CHI '26.
+Website for the Keepin' It Real workshop at CHI '27.

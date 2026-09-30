@@ -1,6 +1,7 @@
 import heroImage from "@/assets/dnd-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { organisers, type Organiser } from "@/data/organisers";
 import {
   Collapsible,
   CollapsibleContent,
@@ -19,8 +20,9 @@ import {
   MapPin,
   ChevronDown,
   Globe,
-  Twitter,
   Linkedin,
+  GraduationCap,
+  CircleUserRound,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -36,7 +38,12 @@ const nav = [
   { id: "contact", label: "Contact" },
 ];
 
-const objectives = [
+const workshopQuestions = [
+  "What does authenticity mean, and how is it negotiated, in the context of LLM-driven NPCs?",
+  "How can understandings of authenticity inform the design of LLM-driven NPCs?",
+];
+
+const workshopApproach = [
   {
     icon: Sparkles,
     title: "Map Authenticity",
@@ -91,107 +98,26 @@ const topics = [
   "Seamful, playful, or deliberately inauthentic character design",
 ];
 
-const organisers = [
-  {
-    name: "Jack Burnett",
-    role: "Interactive AI and Games Researcher",
-    affiliation: "University of Bristol",
-    bio: "Jack is a PhD researcher in Interactive AI at the University of Bristol. His research examines co-design and customisation in games, particularly how human-in-the-loop AI can support accessible interface design, contributing perspectives on player agency, ownership, and participatory approaches to game technology.",
-    links: [
-      { type: "website", url: "https://jackjburnett.github.io/" },
-      { type: "linkedin", url: "https://www.linkedin.com/in/jackjburnett/" },
-    ],
-  },
-  {
-    name: "Vishal Joshi",
-    role: "Generative AI and Narrative Co-Creation Researcher",
-    affiliation: "University of Bristol",
-    bio: "Vishal is a PhD researcher in Interactive AI at the University of Bristol whose work examines generative AI for narrative co-creation in tabletop role-playing games. His research on LLM-based player agents focuses on collaboration, narrative context, and creative interaction between human and artificial players.",
-    links: [
-      { type: "website", url: "https://biglab.co.uk/member/vishal-joshi/" },
-      {
-        type: "linkedin",
-        url: "https://www.linkedin.com/in/vishal-joshi-4a26151b6/",
-      },
-    ],
-  },
-  {
-    name: "Timothy Holland",
-    role: "Digital Ethics and Games Researcher",
-    affiliation: "University of Bristol",
-    bio: "Timothy is a PhD researcher at the University of Bristol working at the intersection of digital ethics, artificial intelligence, and games. His research examines the ethical implications of AI-mediated game systems, including how players understand and respond to automated decisions, fairness, and explainability.",
-    links: [
-      { type: "website", url: "https://biglab.co.uk/member/tim-holland/" },
-      { type: "linkedin", url: "https://www.linkedin.com/in/timmy-holland/" },
-    ],
-  },
-  {
-    name: "Lu Han",
-    role: "Affective AI and Historical Games Researcher",
-    affiliation: "University of Bristol",
-    bio: "Lu is a PhD researcher at the University of Bristol with a background in computer science and media production. Her research explores affective AI in historical games, particularly how emotionally responsive NPCs can support historical thinking, emotional engagement, and historical empathy.",
-    links: [
-      { type: "website", url: "https://biglab.co.uk/member/lu-han/" },
-      {
-        type: "linkedin",
-        url: "https://www.linkedin.com/in/lu-han-17a198391/",
-      },
-    ],
-  },
-  {
-    name: "Richard Cole",
-    role: "Digital Futures and Games Researcher",
-    affiliation: "University of Bristol",
-    bio: "Richard is a Senior Lecturer in Digital Futures and co-Director of the Bristol Digital Game Lab at the University of Bristol. His interdisciplinary research examines games, virtual reality, and artificial intelligence as forms of humanistic inquiry, including historical representation and generative AI-driven game characters.",
-    links: [],
-  },
-  {
-    name: "Chris Bevan",
-    role: "HCI and Player Experience Researcher",
-    affiliation: "University of Bristol",
-    bio: "Chris is a Lecturer in Computer Science at the University of Bristol whose HCI research focuses on immersive technologies and player experience. His recent work includes industry-facing research on generative-AI-driven game characters and large-scale studies of how players interact with and respond to AI-native games.",
-    links: [],
-  },
-  {
-    name: "Elisa D. Mekler",
-    role: "Player Experience and HCI Theory Researcher",
-    affiliation: "IT University of Copenhagen",
-    bio: "Elisa is an Associate Professor at the IT University of Copenhagen's Center for Digital Play. Her research examines motivational and emotional aspects of player experience, game design, and HCI theory, contributing expertise on how affect, enjoyment, and meaningful experience are translated into design practice.",
-    links: [],
-  },
-  {
-    name: "Zijian \"Jason\" Ding",
-    role: "Human-Centred AI Researcher",
-    affiliation: "University of Maryland College Park",
-    bio: "Zijian is a researcher in Human-Centred AI whose work examines how generative AI systems understand, negotiate, and respond to human intent. His research on human-AI interaction and co-creation contributes perspectives on how intentions and system behaviour are negotiated and aligned in open-ended interaction.",
-    links: [],
-  },
-  {
-    name: "Sebastian Deterding",
-    role: "Design Engineering and Gameful Interaction Researcher",
-    affiliation: "Imperial College London",
-    bio: "Sebastian is Chair in Design Engineering at Imperial College London. His research spans motivational design, games and playful design, behavioural science, and computational and design methods, bringing expertise in gameful interaction and in translating theories of human motivation into interactive-system design.",
-    links: [],
-  },
-  {
-    name: "Yun-Gyung Cheong",
-    role: "Game AI and Computational Storytelling Researcher",
-    affiliation: "Sungkyunkwan University",
-    bio: "Yun-Gyung is a Professor of Artificial Intelligence at Sungkyunkwan University whose research focuses on game AI, computational storytelling, story generation, AI planning, and natural language processing. Her work contributes longstanding expertise in computational models of narrative, character behaviour, and interactive storytelling.",
-    links: [],
-  },
-  {
-    name: "Daniel Bennett",
-    role: "Player Experience and Interaction Theory Researcher",
-    affiliation: "Aalborg University",
-    bio: "Daniel is an Assistant Professor at Aalborg University whose HCI research examines agency, autonomy, motivation, player experience, and interaction theory. His games research includes work on jank and the value players find in broken or imperfect game experiences, providing a perspective on productive inauthenticity.",
-    links: [],
-  },
-];
+const organiserLinkTypes = [
+  "linkedin",
+  "orcid",
+  "scholar",
+  "website",
+] as const;
 
-const linkIcon = (type: string) => {
-  if (type === "twitter") return Twitter;
+type OrganiserLinkType = (typeof organiserLinkTypes)[number];
+
+const organiserLinkLabels: Record<OrganiserLinkType, string> = {
+  linkedin: "LinkedIn",
+  orcid: "ORCID",
+  scholar: "Scholar",
+  website: "Website",
+};
+
+const linkIcon = (type: OrganiserLinkType) => {
   if (type === "linkedin") return Linkedin;
+  if (type === "orcid") return CircleUserRound;
+  if (type === "scholar") return GraduationCap;
   return Globe;
 };
 
@@ -322,7 +248,7 @@ const Index = () => {
             {[
               { icon: Calendar, label: "Conference", value: "May 10-14, 2027" },
               { icon: MapPin, label: "Venue", value: "Pittsburgh, USA" },
-              { icon: Users, label: "Capacity", value: "Approx. 25" },
+              { icon: Users, label: "Capacity", value: "25" },
             ].map((item) => (
               <Card
                 key={item.label}
@@ -355,8 +281,26 @@ const Index = () => {
             eyebrow="Chapter II"
             title="Workshop Objectives"
           />
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+            {workshopQuestions.map((question, index) => (
+              <Card
+                key={question}
+                className="p-7 bg-gradient-parchment border-accent/40 shadow-deep-card"
+              >
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">
+                  Question {index + 1}
+                </p>
+                <p className="font-display text-xl text-foreground leading-relaxed">
+                  {question}
+                </p>
+              </Card>
+            ))}
+          </div>
+          <h3 className="font-display text-2xl text-center text-accent mb-6">
+            How we'll address them
+          </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {objectives.map((g) => (
+            {workshopApproach.map((g) => (
               <Card
                 key={g.title}
                 className="group p-6 bg-gradient-parchment border-border/60 hover:border-accent/60 transition-smooth hover:-translate-y-1 hover:shadow-ember"
@@ -372,11 +316,6 @@ const Index = () => {
                 </p>
               </Card>
             ))}
-          </div>
-          <div className="max-w-4xl mx-auto mt-10 text-center text-muted-foreground leading-relaxed">
-            The workshop asks two questions: what does authenticity mean, and
-            how is it negotiated, in the context of LLM-driven NPCs? How can
-            understandings of authenticity inform the design of LLM-driven NPCs?
           </div>
         </div>
       </section>
@@ -562,10 +501,13 @@ const SectionHeader = ({
   </div>
 );
 
-type Organiser = (typeof organisers)[number];
-
 const OrganiserCard = ({ organiser }: { organiser: Organiser }) => {
   const [open, setOpen] = useState(false);
+  const links = organiserLinkTypes.flatMap((type) => {
+    const url = organiser.links?.[type];
+    return url ? [{ type, url }] : [];
+  });
+
   return (
     <Card className="p-6 bg-gradient-parchment border-border/60 hover:border-accent/60 transition-smooth">
       <div className="flex items-start gap-4">
@@ -592,9 +534,9 @@ const OrganiserCard = ({ organiser }: { organiser: Organiser }) => {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {organiser.bio}
             </p>
-            {organiser.links.length > 0 && (
+            {links.length > 0 && (
               <div className="flex flex-wrap gap-3 mt-4">
-                {organiser.links.map((l) => {
+                {links.map((l) => {
                   const Icon = linkIcon(l.type);
                   return (
                     <a
@@ -606,7 +548,7 @@ const OrganiserCard = ({ organiser }: { organiser: Organiser }) => {
                       className="inline-flex items-center gap-1.5 text-xs text-accent hover:text-primary transition-smooth"
                     >
                       <Icon className="h-3.5 w-3.5" />
-                      <span className="capitalize">{l.type}</span>
+                      <span>{organiserLinkLabels[l.type]}</span>
                     </a>
                   );
                 })}
