@@ -21,6 +21,7 @@ export const organisers: Organiser[] = [
       linkedin: "https://www.linkedin.com/in/jackjburnett/",
       orcid: "https://orcid.org/0000-0001-8472-6121",
       website: "https://jackjburnett.github.io/",
+      scholar: "https://scholar.google.com/citations?user=gNer1EkAAAAJ&hl=en",
     },
   },
   {
@@ -57,57 +58,15 @@ export const organisers: Organiser[] = [
     },
   },
   {
-    name: "Richard Cole",
-    role: "Digital Futures and Games Researcher",
-    affiliation: "University of Bristol",
-    bio: "Richard is a Senior Lecturer in Digital Futures and co-Director of the Bristol Digital Game Lab at the University of Bristol. His interdisciplinary research examines games, virtual reality, and artificial intelligence as forms of humanistic inquiry, including historical representation and the development of generative AI-driven game characters.",
-    links: {
-      orcid: "https://orcid.org/0000-0002-4140-6539",
-    },
-  },
-  {
-    name: "Chris Bevan",
-    role: "HCI and Player Experience Researcher",
-    affiliation: "University of Bristol",
-    bio: "Chris is a Lecturer in Computer Science at the University of Bristol whose HCI research focuses on immersive technologies and player experience. His recent work includes industry-facing research on generative-AI-driven game characters and large-scale studies of how players interact with and respond to AI-native games.",
-    links: {
-      orcid: "https://orcid.org/0000-0002-2823-420X",
-    },
-  },
-  {
-    name: "Elisa D. Mekler",
-    role: "Player Experience and HCI Theory Researcher",
-    affiliation: "IT University of Copenhagen",
-    bio: "Elisa is an Associate Professor at the IT University of Copenhagen's Center for Digital Play. Her research examines motivational and emotional aspects of player experience, game design, and HCI theory, contributing expertise on how affect, enjoyment, and meaningful experience are translated into design practice.",
-    links: {
-      orcid: "https://orcid.org/0000-0003-0076-6703",
-    },
-  },
-  {
     name: 'Zijian "Jason" Ding',
     role: "Human-Centred AI Researcher",
     affiliation: "University of Maryland College Park",
     bio: "Zijian is a researcher in Human-Centred AI whose work examines how generative AI systems understand, negotiate, and respond to human intent. His research on human-AI interaction and co-creation contributes perspectives on how intentions and system behaviour are negotiated and aligned in open-ended interaction.",
     links: {
       orcid: "https://orcid.org/0000-0002-6372-0369",
-    },
-  },
-  {
-    name: "Sebastian Deterding",
-    role: "Design Engineering and Gameful Interaction Researcher",
-    affiliation: "Imperial College London",
-    bio: "Sebastian is Chair in Design Engineering at Imperial College London. His research spans motivational design, games and playful design, behavioural science, and computational and design methods, bringing expertise in gameful interaction and in translating theories of human motivation into interactive-system design.",
-    links: {
-      orcid: "https://orcid.org/0000-0003-0033-2104",
-    },
-  },
-  {
-    name: "Yun-Gyung Cheong",
-    role: "Game AI and Computational Storytelling Researcher",
-    affiliation: "Sungkyunkwan University",
-    bio: "Yun-Gyung is a Professor of Artificial Intelligence at Sungkyunkwan University whose research focuses on game AI, computational storytelling, story generation, AI planning, and natural language processing. Her work contributes longstanding expertise in computational models of narrative, character behaviour, and interactive storytelling.",
-    links: {
-      orcid: "https://orcid.org/0000-0001-6329-8439",
+      website: "https://jason-ding.com/",
+      scholar: "https://scholar.google.com/citations?hl=en&user=nHgFeKcAAAAJ",
+      linkedin: "https://www.linkedin.com/in/zijian-ding/",
     },
   },
   {
@@ -117,6 +76,62 @@ export const organisers: Organiser[] = [
     bio: "Emma is a Post-Doctoral Researcher in the Gamification Group at Tampere University's Research Centre of Gameful Realities. Drawing on psychology, cognitive neuroscience, and HCI, her research examines non-player characters, adaptive and personalised gaming experiences, and embodiment in virtual and mixed-reality environments.",
     links: {
       orcid: "https://orcid.org/0000-0002-5108-5740",
+      scholar: "https://scholar.google.com/citations?user=LPP8dHwAAAAJ&hl=en",
+      website: "https://webpages.tuni.fi/gamification/members/emma-pretty/",
+    },
+  },
+  {
+    name: "Elisa D. Mekler",
+    role: "Player Experience and HCI Theory Researcher",
+    affiliation: "IT University of Copenhagen",
+    bio: "Elisa is an Associate Professor at the IT University of Copenhagen's Center for Digital Play. Her research examines motivational and emotional aspects of player experience, game design, and HCI theory, contributing expertise on how affect, enjoyment, and meaningful experience are translated into design practice.",
+    links: {
+      orcid: "https://orcid.org/0000-0003-0076-6703",
+      scholar: "https://scholar.google.com/citations?user=9j30OywAAAAJ&hl=de",
+      website: "https://researcher.itu.dk/p/en/persons/elisa-mekler"
+    },
+  },
+  {
+    name: "Chris Bevan",
+    role: "HCI and Player Experience Researcher",
+    affiliation: "University of Bristol",
+    bio: "Chris is a Lecturer in Computer Science at the University of Bristol whose HCI research focuses on immersive technologies and player experience. His recent work includes industry-facing research on generative-AI-driven game characters and large-scale studies of how players interact with and respond to AI-native games.",
+    links: {
+      orcid: "https://orcid.org/0000-0002-2823-420X",
+      website: "https://www.chrisbevan.co.uk/",
+      scholar: "https://scholar.google.com/citations?user=oeU9peMAAAAJ&hl=en"
+    },
+  },
+  {
+    name: "Yun-Gyung Cheong",
+    role: "Game AI and Computational Storytelling Researcher",
+    affiliation: "Sungkyunkwan University",
+    bio: "Yun-Gyung is a Professor of Artificial Intelligence at Sungkyunkwan University whose research focuses on game AI, computational storytelling, story generation, AI planning, and natural language processing. Her work contributes longstanding expertise in computational models of narrative, character behaviour, and interactive storytelling.",
+    links: {
+      orcid: "https://orcid.org/0000-0001-6329-8439",
+      scholar: "https://scholar.google.com/citations?user=yhfGHeIAAAAJ&hl=en"
+    },
+  },
+  {
+    name: "Richard Cole",
+    role: "Digital Futures and Games Researcher",
+    affiliation: "University of Bristol",
+    bio: "Richard is a Senior Lecturer in Digital Futures and co-Director of the Bristol Digital Game Lab at the University of Bristol. His interdisciplinary research examines games, virtual reality, and artificial intelligence as forms of humanistic inquiry, including historical representation and the development of generative AI-driven game characters.",
+    links: {
+      orcid: "https://orcid.org/0000-0002-4140-6539",
+      linkedin: "https://www.linkedin.com/in/richardcolegamingaudiences/",
+      scholar: "https://scholar.google.com/citations?user=XGVPtGUAAAAJ&hl=en"
+    },
+  },
+  {
+    name: "Sebastian Deterding",
+    role: "Design Engineering and Gameful Interaction Researcher",
+    affiliation: "Imperial College London",
+    bio: "Sebastian is Chair in Design Engineering at Imperial College London. His research spans motivational design, games and playful design, behavioural science, and computational and design methods, bringing expertise in gameful interaction and in translating theories of human motivation into interactive-system design.",
+    links: {
+      orcid: "https://orcid.org/0000-0003-0033-2104",
+      scholar: "https://scholar.google.com/citations?user=BvHFgSwAAAAJ&hl=en",
+      website: "https://codingconduct.cc/"
     },
   },
   {
@@ -126,6 +141,9 @@ export const organisers: Organiser[] = [
     bio: "Daniel is an Assistant Professor at Aalborg University whose HCI research examines agency, autonomy, motivation, player experience, and interaction theory. His games research includes work on jank and the value players find in broken or imperfect game experiences, providing a perspective on productive inauthenticity.",
     links: {
       orcid: "https://orcid.org/0000-0002-9330-5529",
+      linkedin: "https://www.linkedin.com/in/daniel-bennett1981/",
+      scholar: "https://scholar.google.com/citations?user=KxrABMIAAAAJ&hl=en",
+      website: "https://danbennettdev.github.io/"
     },
   },
 ];
