@@ -511,12 +511,20 @@ const OrganiserCard = ({ organiser }: { organiser: Organiser }) => {
   return (
     <Card className="p-6 bg-gradient-parchment border-border/60 hover:border-accent/60 transition-smooth">
       <div className="flex items-start gap-4">
-        <div className="h-16 w-16 shrink-0 rounded-full bg-gradient-ember flex items-center justify-center shadow-ember font-display text-xl text-primary-foreground">
-          {organiser.name
-            .replace(/"/g, "")
-            .split(" ")
-            .map((n) => n[0])
-            .join("")}
+        <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-gradient-ember flex items-center justify-center shadow-ember font-display text-xl text-primary-foreground">
+          {organiser.image ? (
+            <img
+              src={`/organisers/${organiser.image}`}
+              alt={organiser.name}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            organiser.name
+              .replace(/"/g, "")
+              .split(" ")
+              .map((n) => n[0])
+              .join("")
+          )}
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="font-display text-lg text-foreground">

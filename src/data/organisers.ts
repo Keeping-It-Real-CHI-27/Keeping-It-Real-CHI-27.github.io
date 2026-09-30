@@ -1,5 +1,6 @@
 export interface Organiser {
   name: string;
+  image?: string;
   role: string;
   affiliation: string;
   bio: string;
