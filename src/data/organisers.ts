@@ -135,7 +135,7 @@ export const organisers: Organiser[] = [
     },
   },
   {
-    name: "Daniel Bennett",
+    name: "Dan Bennett",
     role: "Player Experience and Interaction Theory Researcher",
     affiliation: "Aalborg University",
     email: "dtbe@cs.aau.dk",
