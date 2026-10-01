@@ -39,7 +39,7 @@ const nav = [
 ];
 
 const workshopQuestions = [
-  "What does authenticity mean, and how is it negotiated, in the context of LLM-driven NPCs?",
+  "How is authenticity understood and negotiated in the context of LLM-driven NPCs?",
   "How can understandings of authenticity inform the design of LLM-driven NPCs?",
 ];
 
@@ -68,24 +68,61 @@ const workshopApproach = [
 
 const schedule = [
   {
-    time: "Session 1",
-    title: "Mapping and Negotiating Authenticity",
-    desc: "Participants will discuss perspectives from accepted position papers, interact with LLM-driven NPC experiences, document moments that feel authentic or inauthentic, and revise a preliminary conceptual map of authenticity.",
+    title: "Session 1: Mapping and Negotiating Authenticity",
+    duration: "90 minutes",
+    activities: [
+      {
+        time: "15 min",
+        title: "Position-paper perspectives",
+        desc: "Introduce contrasting and complementary understandings of authenticity identified in the accepted papers.",
+      },
+      {
+        time: "45 min",
+        title: "Hands-on NPC exploration",
+        desc: "Interact with LLM-driven NPC experiences and document authentic or inauthentic moments, the expectations involved, whose intentions take precedence, and whether the interaction is desirable.",
+      },
+      {
+        time: "15 min",
+        title: "Conceptual mapping",
+        desc: "Add to, challenge, merge, or reframe the preliminary map's categories and terminology.",
+      },
+      {
+        time: "15 min",
+        title: "Negotiating disagreement",
+        desc: "Compare cases that produce different judgements of authenticity and preserve contestation alongside points of convergence.",
+      },
+    ],
   },
   {
-    time: "Break",
-    title: "Optional Peer Feedback and Playtesting",
-    desc: "Participants may share and play-test AI-native games or character experiences, adding further examples to carry into the second session.",
-  },
-  {
-    time: "Session 2",
-    title: "Designing with Authenticity Tensions",
-    desc: "Small groups will select a tension from the conceptual map, develop a design response, challenge one another's interventions through walkthroughs and prompting, and consolidate design strategies and trade-offs.",
-  },
-  {
-    time: "Close",
-    title: "Shared Outputs",
-    desc: "The workshop will close by consolidating two outputs: a shared vocabulary and conceptual map, and a collection of design tensions, possible responses, points of breakdown, and opportunities for designing with inauthenticity.",
+    title: "Session 2: Designing with Authenticity Tensions",
+    duration: "90 minutes",
+    activities: [
+      {
+        time: "15 min",
+        title: "Select a tension",
+        desc: "Choose a conflict from the conceptual map and consider how different design choices might negotiate it.",
+      },
+      {
+        time: "25 min",
+        title: "Develop a design response",
+        desc: "Create an LLM-driven NPC or interaction scenario, identifying which expectations it prioritises, what it compromises, and where inauthenticity might be productive.",
+      },
+      {
+        time: "15 min",
+        title: "Challenge the intervention",
+        desc: "Exchange designs and test them through interaction, scenario walkthroughs, boundary-testing, and adversarial prompting.",
+      },
+      {
+        time: "20 min",
+        title: "Review and refine",
+        desc: "Document the strategies used, trade-offs encountered, and new tensions that emerged.",
+      },
+      {
+        time: "15 min",
+        title: "Plenary synthesis",
+        desc: "Consolidate a shared vocabulary and conceptual map alongside design tensions, possible responses, trade-offs, breakdowns, and opportunities for productive inauthenticity.",
+      },
+    ],
   },
 ];
 
@@ -322,36 +359,59 @@ const Index = () => {
 
       <section id="schedule" className="py-24 container">
         <SectionHeader icon={Calendar} eyebrow="Chapter III" title="Schedule" />
-        <div className="max-w-3xl mx-auto relative">
-          <div className="absolute left-[88px] top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-accent/40 to-transparent hidden sm:block" />
-          <div className="space-y-4">
-            {schedule.map((s) => (
-              <div
-                key={s.time}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-6 group"
-              >
-                <div className="sm:w-20 shrink-0 text-right">
-                  <span className="font-display text-accent text-lg">
-                    {s.time}
-                  </span>
-                </div>
-                <div className="hidden sm:flex flex-col items-center pt-2">
-                  <div className="h-3 w-3 rounded-full bg-primary shadow-ember group-hover:animate-flicker" />
-                </div>
-                <Card className="flex-1 p-5 bg-card/60 border-border/60 hover:border-accent/60 transition-smooth">
-                  <h3 className="font-display text-lg text-foreground mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{s.desc}</p>
-                </Card>
+        <div className="max-w-4xl mx-auto space-y-10">
+          {schedule.map((session) => (
+            <div key={session.title}>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5">
+                <h3 className="font-display text-2xl text-accent">
+                  {session.title}
+                </h3>
+                <span className="text-sm uppercase tracking-widest text-muted-foreground">
+                  {session.duration}
+                </span>
               </div>
-            ))}
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            The workshop will run as two consecutive 90-minute sessions.
-            Workshop date and room will be confirmed by CHI 2027.
-          </p>
+              <div className="relative space-y-4">
+                <div className="absolute left-[88px] top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-accent/40 to-transparent hidden sm:block" />
+                {session.activities.map((activity) => (
+                  <div
+                    key={`${session.title}-${activity.time}-${activity.title}`}
+                    className="flex flex-col sm:flex-row gap-4 sm:gap-6 group"
+                  >
+                    <div className="sm:w-20 shrink-0 text-right">
+                      <span className="font-display text-accent text-lg">
+                        {activity.time}
+                      </span>
+                    </div>
+                    <div className="hidden sm:flex flex-col items-center pt-2">
+                      <div className="h-3 w-3 rounded-full bg-primary shadow-ember group-hover:animate-flicker" />
+                    </div>
+                    <Card className="flex-1 p-5 bg-card/60 border-border/60 hover:border-accent/60 transition-smooth">
+                      <h4 className="font-display text-lg text-foreground mb-1">
+                        {activity.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm">
+                        {activity.desc}
+                      </p>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          <Card className="p-5 bg-gradient-parchment border-accent/40">
+            <h3 className="font-display text-lg text-accent mb-1">
+              Optional break activity
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Participants are invited to share and play-test AI-native games
+              or character experiences in an informal peer-feedback session.
+            </p>
+          </Card>
         </div>
+        <p className="text-center text-sm text-muted-foreground mt-8">
+          The workshop will run as two consecutive 90-minute sessions.
+          Workshop date and room will be confirmed by CHI 2027.
+        </p>
       </section>
 
       <section id="cfp" className="py-24 bg-card/30 border-y border-border/40">
@@ -370,6 +430,8 @@ const Index = () => {
               design.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
+              We welcome researchers, designers, developers, practitioners,
+              and players with perspectives on LLM-driven characters.
               Position papers may take the form of opinion pieces,
               autoethnographies, reflective accounts, literature reviews,
               theoretical perspectives, design critiques, case analyses, or
@@ -405,6 +467,11 @@ const Index = () => {
                   <li>
                     <span className="text-foreground">Selection:</span>{" "}
                     Relevance and distinctive or complementary perspective
+                  </li>
+                  <li>
+                    <span className="text-foreground">Attendance:</span>{" "}
+                    Accepted authors are prioritised; other CHI attendees may
+                    join subject to capacity
                   </li>
                   <li>
                     <span className="text-foreground">Outputs:</span> Website
@@ -534,6 +601,12 @@ const OrganiserCard = ({ organiser }: { organiser: Organiser }) => {
           <p className="text-muted-foreground text-xs mt-1 italic">
             {organiser.affiliation}
           </p>
+          <a
+            href={`mailto:${organiser.email}`}
+            className="text-muted-foreground hover:text-accent text-xs mt-1 inline-block transition-smooth break-all"
+          >
+            {organiser.email}
+          </a>
         </div>
       </div>
       <Collapsible open={open} onOpenChange={setOpen}>
