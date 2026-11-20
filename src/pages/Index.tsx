@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-const workshopUrl = "https://keeping-it-real-chi-27.github.io";
+const submissionUrl = "https://easychair.org/conferences/?conf=kirchi27";
 const contactEmail = "jack.burnett@bristol.ac.uk";
 
 const nav = [
@@ -191,7 +191,7 @@ const Index = () => {
             size="sm"
             className="bg-gradient-ember shadow-ember hover:opacity-90"
           >
-            <a href="#cfp">Submit</a>
+            <a href={submissionUrl}>Submit</a>
           </Button>
         </nav>
       </header>
@@ -489,7 +489,7 @@ const Index = () => {
                 size="lg"
                 className="bg-gradient-ember shadow-ember hover:opacity-90 font-display tracking-wide"
               >
-                <a href={workshopUrl}>Submission Instructions</a>
+                <a href={submissionUrl}>Submit via EasyChair</a>
               </Button>
             </div>
           </Card>
@@ -504,7 +504,7 @@ const Index = () => {
           game design, AI ethics, affective interaction, and historical and
           cultural representation.
         </div>
-        <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid gap-6 max-w-5xl mx-auto sm:grid-cols-4 sm:[&>*]:col-span-2 sm:[&>:last-child:nth-child(odd)]:col-start-2">
           {organisers.map((o) => (
             <OrganiserCard key={o.name} organiser={o} />
           ))}
