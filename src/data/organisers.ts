@@ -29,6 +29,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Vishal Joshi",
+    image: "Joshi.jpg",
     role: "Generative AI and Group Work Researcher",
     affiliation: "University of Bristol",
     email: "we19383@bristol.ac.uk",
@@ -66,6 +67,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Emma Jane Pretty",
+    image: "Pretty.jpg",
     role: "NPC and Adaptive Games Researcher",
     affiliation: "Tampere University",
     email: "emma.pretty@tuni.fi",
@@ -78,6 +80,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: 'Zijian "Jason" Ding',
+    image: "Ding.jpg",
     role: "Human-Centred AI Researcher",
     affiliation: "University of Maryland College Park",
     email: "ding@umd.edu",
@@ -126,6 +129,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Younbo Jung",
+    image: "Younbo.jpg",
     role: "Interactive Media and Virtual Characters Researcher",
     affiliation: "Nanyang Technological University",
     email: "YBJung@ntu.edu.sg",
