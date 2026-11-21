@@ -75,7 +75,7 @@ export const organisers: Organiser[] = [
     links: {
       orcid: "https://orcid.org/0000-0002-5108-5740",
       scholar: "https://scholar.google.com/citations?user=LPP8dHwAAAAJ&hl=en",
-      website: "https://webpages.tuni.fi/gamification/members/emma-pretty/",
+      website: "https://research.tuni.fi/gameful-realities/gamification-group/",
     },
   },
   {
