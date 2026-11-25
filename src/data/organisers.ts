@@ -42,6 +42,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Timothy Holland",
+    image: "Holland.jpeg",
     role: "Digital Ethics and Games Researcher",
     affiliation: "University of Bristol",
     email: "tim.holland@bristol.ac.uk",
@@ -55,6 +56,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Lu Han",
+    image: "Han.png",
     role: "Affective AI and Historical Games Researcher",
     affiliation: "University of Bristol",
     email: "lu.han@bristol.ac.uk",
@@ -106,6 +108,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Chris Bevan",
+    image: "Bevan.jpeg",
     role: "HCI and Player Experience Researcher",
     affiliation: "University of Bristol",
     email: "chris.bevan@bristol.ac.uk",
@@ -166,6 +169,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Richard Cole",
+    image: "Cole.jpeg",
     role: "Digital Futures and Games Researcher",
     affiliation: "University of Bristol",
     email: "richard.cole@bristol.ac.uk",
