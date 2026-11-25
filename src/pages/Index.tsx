@@ -15,8 +15,6 @@ import {
   Users,
   Mail,
   Dice6,
-  Shield,
-  Sparkles,
   MapPin,
   ChevronDown,
   Globe,
@@ -43,29 +41,6 @@ const workshopQuestions = [
   "How can understandings of authenticity inform the design of LLM-driven NPCs?",
 ];
 
-const workshopApproach = [
-  {
-    icon: Sparkles,
-    title: "Map Authenticity",
-    desc: "Develop a shared vocabulary and conceptual map of how authenticity is understood in LLM-driven NPCs.",
-  },
-  {
-    icon: Scroll,
-    title: "Compare Perspectives",
-    desc: "Examine how players, designers, developers, and researchers negotiate what a character should be authentic to.",
-  },
-  {
-    icon: Swords,
-    title: "Surface Tensions",
-    desc: "Identify where authored intent, player expectations, character coherence, cultural context, and model behaviour align or conflict.",
-  },
-  {
-    icon: Shield,
-    title: "Design Responses",
-    desc: "Explore strategies, trade-offs, and open questions for designing with authenticity and productive inauthenticity.",
-  },
-];
-
 const schedule = [
   {
     title: "Session 1: Mapping and Negotiating Authenticity",
@@ -73,29 +48,29 @@ const schedule = [
     activities: [
       {
         time: "15 min",
-        title: "Position-paper perspectives",
-        desc: "Introduce contrasting and complementary understandings of authenticity identified in the accepted papers.",
+        title: "Introduce the conceptual map",
+        desc: "The organisers introduce a preliminary map drawn from accepted position papers, along with working definitions of authenticity, believability, realism, and consistency. No prior reading is required.",
       },
       {
         time: "45 min",
         title: "Hands-on NPC exploration",
-        desc: "Interact with LLM-driven NPC experiences and document authentic or inauthentic moments, the expectations involved, whose intentions take precedence, and whether the interaction is desirable.",
+        desc: "In small groups, try commercial demos such as 1001 Nights and Dead Meat and research prototypes such as Lu Han’s The Last Dialogue. Note what feels authentic or inauthentic, whose expectations and intentions matter, and whether the result is desirable. Devices are preconfigured, with local versions or recordings available if needed.",
       },
       {
         time: "15 min",
         title: "Conceptual mapping",
-        desc: "Add to, challenge, merge, or reframe the preliminary map's categories and terminology.",
+        desc: "Use your observations to revise the map’s categories and language.",
       },
       {
         time: "15 min",
-        title: "Negotiating disagreement",
-        desc: "Compare cases that produce different judgements of authenticity and preserve contestation alongside points of convergence.",
+        title: "Compare judgements",
+        desc: "Discuss why similar interactions can feel authentic to some people and inauthentic to others. Record points of agreement and disagreement on the map.",
       },
     ],
   },
   {
     title: "Optional break activity",
-    desc: "Participants are invited to share and play-test AI-native games or character experiences in an informal peer-feedback session.",
+    desc: "Share and play-test AI-native games or character experiences, exchange informal feedback, and pick up ideas for Session 2.",
   },
   {
     title: "Session 2: Designing with Authenticity Tensions",
@@ -104,27 +79,27 @@ const schedule = [
       {
         time: "15 min",
         title: "Select a tension",
-        desc: "Choose a conflict from the conceptual map and consider how different design choices might negotiate it.",
+        desc: "In small groups, choose a tension from the map and explore how design choices might address competing expectations.",
       },
       {
         time: "25 min",
         title: "Develop a design response",
-        desc: "Create an LLM-driven NPC or interaction scenario, identifying which expectations it prioritises, what it compromises, and where inauthenticity might be productive.",
+        desc: "Modify a prompt or develop a scenario. Consider which expectations your design prioritises, what it compromises, and where inauthenticity might be playful or productive. No programming experience is required.",
       },
       {
         time: "15 min",
-        title: "Challenge the intervention",
-        desc: "Exchange designs and test them through interaction, scenario walkthroughs, boundary-testing, and adversarial prompting.",
+        title: "Test each other’s designs",
+        desc: "Exchange designs and use live interactions, scenario walkthroughs, and boundary testing to see where expectations conflict. Organisers will explain the distress protocol before testing and share support resources after the session.",
       },
       {
         time: "20 min",
         title: "Review and refine",
-        desc: "Document the strategies used, trade-offs encountered, and new tensions that emerged.",
+        desc: "Refine your design in light of the feedback. Record the strategies you used, the trade-offs you made, and any new tensions.",
       },
       {
         time: "15 min",
-        title: "Plenary synthesis",
-        desc: "Consolidate a shared vocabulary and conceptual map alongside design tensions, possible responses, trade-offs, breakdowns, and opportunities for productive inauthenticity.",
+        title: "Bring the findings together",
+        desc: "Finalise the shared conceptual map and collect design responses, including their trade-offs, where they break down, and how they can use inauthenticity productively.",
       },
     ],
   },
@@ -237,8 +212,9 @@ const Index = () => {
           </div>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             A workshop on what authenticity means for LLM-driven non-player
-            characters, how it is negotiated across stakeholders and systems,
-            and how those understandings can inform design.
+            characters,
+            <br />
+            how it is negotiated, and how those understandings can inform design.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button
@@ -322,23 +298,32 @@ const Index = () => {
             eyebrow="Chapter II"
             title="Workshop Objectives"
           />
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            Through the workshop we aim to explore the following questions:
-          </p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            {workshopQuestions.map((question, index) => (
-              <Card
-                key={question}
-                className="p-7 bg-gradient-parchment border-accent/40 shadow-deep-card"
-              >
-                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">
-                  Question {index + 1}
-                </p>
-                <p className="font-display text-xl text-foreground leading-relaxed">
-                  {question}
-                </p>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto space-y-6 text-center leading-relaxed">
+            <p className="max-w-prose mx-auto text-muted-foreground">
+              What makes an LLM-driven NPC feel authentic is still an open
+              question. The workshop will focus on two questions.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              {workshopQuestions.map((question, index) => (
+                <Card
+                  key={question}
+                  className="p-7 bg-gradient-parchment border-accent/40 shadow-deep-card"
+                >
+                  <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">
+                    Question {index + 1}
+                  </p>
+                  <p className="font-display text-xl text-foreground leading-relaxed">
+                    {question}
+                  </p>
+                </Card>
+              ))}
+            </div>
+            <p className="max-w-prose mx-auto text-muted-foreground">
+              We’ll develop a shared vocabulary and map different understandings
+              of authenticity, whose perspectives shape them, and where they
+              agree or conflict. We’ll use the map to explore design strategies
+              and identify open questions for research and practice.
+            </p>
           </div>
         </div>
       </section>
@@ -391,9 +376,14 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">{session.desc}</p>
             </Card>
           ))}
+          <p className="mx-auto max-w-prose text-center text-sm text-muted-foreground">
+            Scenario walkthroughs are available as an alternative to live
+            gameplay. Facilitators will support in-person and remote
+            participants and can add spoken or written comments to Miro on
+            their behalf.
+          </p>
         </div>
         <p className="text-center text-sm text-muted-foreground mt-8">
-          The workshop will run as two 90-minute sessions with a break in between.
           Workshop date and room will be confirmed by CHI 2027.
         </p>
       </section>
@@ -522,7 +512,7 @@ const Index = () => {
       </section>
 
       <footer className="py-8 border-t border-border/40 text-center text-xs text-muted-foreground">
-        Copyright Keepin' It Real - CHI 2027.
+        Keepin' It Real · CHI 2027
       </footer>
     </div>
   );

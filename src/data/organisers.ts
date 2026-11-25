@@ -16,6 +16,7 @@ export interface Organiser {
 export const organisers: Organiser[] = [
   {
     name: "Jack Burnett",
+    image: "Burnett.png",
     role: "Interactive AI and Games Researcher",
     affiliation: "University of Bristol",
     email: "jack.burnett@bristol.ac.uk",
@@ -96,6 +97,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Elisa D. Mekler",
+    image: "Mekler.png",
     role: "Player Experience and HCI Theory Researcher",
     affiliation: "IT University of Copenhagen",
     email: "elme@itu.dk",
@@ -121,6 +123,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Yun-Gyung Cheong",
+    image: "Cheong.png",
     role: "Game AI and Computational Storytelling Researcher",
     affiliation: "Sungkyunkwan University",
     email: "aimecca@skku.edu",
@@ -143,6 +146,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Dan Bennett",
+    image: "Bennett.png",
     role: "Player Experience and Interaction Theory Researcher",
     affiliation: "Aalborg University",
     email: "dtbe@cs.aau.dk",
