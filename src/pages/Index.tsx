@@ -322,6 +322,9 @@ const Index = () => {
             eyebrow="Chapter II"
             title="Workshop Objectives"
           />
+          <p className="text-center text-sm text-muted-foreground mt-8">
+            Through the workshop we aim to explore the following questions:
+          </p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             {workshopQuestions.map((question, index) => (
               <Card
@@ -333,27 +336,6 @@ const Index = () => {
                 </p>
                 <p className="font-display text-xl text-foreground leading-relaxed">
                   {question}
-                </p>
-              </Card>
-            ))}
-          </div>
-          <h3 className="font-display text-2xl text-center text-accent mb-6">
-            How we'll address them
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {workshopApproach.map((g) => (
-              <Card
-                key={g.title}
-                className="group p-6 bg-gradient-parchment border-border/60 hover:border-accent/60 transition-smooth hover:-translate-y-1 hover:shadow-ember"
-              >
-                <div className="h-12 w-12 rounded-md bg-gradient-ember flex items-center justify-center shadow-ember mb-5 group-hover:animate-flicker">
-                  <g.icon className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <h3 className="font-display text-xl text-accent mb-2">
-                  {g.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {g.desc}
                 </p>
               </Card>
             ))}
