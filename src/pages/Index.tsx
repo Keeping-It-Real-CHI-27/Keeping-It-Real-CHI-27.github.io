@@ -378,14 +378,10 @@ const Index = () => {
           ))}
           <p className="mx-auto max-w-prose text-center text-sm text-muted-foreground">
             Scenario walkthroughs are available as an alternative to live
-            gameplay. Facilitators will support in-person and remote
-            participants and can add spoken or written comments to Miro on
-            their behalf.
+            gameplay. Facilitators will support both in-person and remote
+            participants.
           </p>
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-8">
-          Workshop date and room will be confirmed by CHI 2027.
-        </p>
       </section>
 
       <section id="cfp" className="py-24 bg-card/30 border-y border-border/40">
@@ -397,8 +393,8 @@ const Index = () => {
           />
           <Card className="p-8 md:p-12 bg-gradient-parchment border-border/60 shadow-deep-card">
             <p className="text-lg text-foreground/90 leading-relaxed mb-5">
-              We invite 500-word position papers for "Keepin' it Real:
-              Authenticity in LLM-driven NPCs", a CHI 2027 workshop examining
+              We invite 500-word position papers for “Keepin’ it Real:
+              Authenticity in LLM-driven NPCs”, a CHI 2027 workshop examining
               what authenticity means for LLM-driven non-player characters, how
               it is negotiated, and how different understandings can inform
               design.
@@ -448,8 +444,9 @@ const Index = () => {
                     join subject to capacity
                   </li>
                   <li>
-                    <span className="text-foreground">Outputs:</span> Website
-                    papers, shared map, and possible edited publication
+                    <span className="text-foreground">Outputs:</span> We’ll
+                    share accepted papers on this site and use them to build
+                    a map for discussion.
                   </li>
                 </ul>
               </div>
@@ -501,18 +498,22 @@ const Index = () => {
             >
               {contactEmail}
             </a>
-            <div className="divider-rune">
-              <img src="/icon.svg" alt="Rune icon" className="h-4 w-4" />
+            <div className="divider-rune" aria-hidden="true">
+              <img src="/icon.svg" alt="" className="h-4 w-4" />
             </div>
-            <p className="text-sm text-muted-foreground">
-              Keepin' It Real - CHI 2027 - Pittsburgh, USA
-            </p>
           </Card>
         </div>
       </section>
 
       <footer className="py-8 border-t border-border/40 text-center text-xs text-muted-foreground">
-        Keepin' It Real · CHI 2027
+        Keepin' It Real ·{" "}
+        <a
+          href="https://chi2027.acm.org/"
+          className="underline underline-offset-2 hover:text-accent"
+        >
+          CHI 2027
+        </a>{" "}
+        · Pittsburgh, USA
       </footer>
     </div>
   );
