@@ -153,6 +153,7 @@ export const organisers: Organiser[] = [
   },
   {
     name: "Sebastian Deterding",
+    image: "Deterding.jpeg",
     role: "Design Engineering and Gameful Interaction Researcher",
     affiliation: "Imperial College London",
     email: "s.deterding@imperial.ac.uk",
