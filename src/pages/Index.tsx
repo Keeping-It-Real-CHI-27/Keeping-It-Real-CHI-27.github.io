@@ -94,6 +94,10 @@ const schedule = [
     ],
   },
   {
+    title: "Optional break activity",
+    desc: "Participants are invited to share and play-test AI-native games or character experiences in an informal peer-feedback session.",
+  },
+  {
     title: "Session 2: Designing with Authenticity Tensions",
     duration: "90 minutes",
     activities: [
@@ -360,7 +364,7 @@ const Index = () => {
       <section id="schedule" className="py-24 container">
         <SectionHeader icon={Calendar} eyebrow="Chapter III" title="Schedule" />
         <div className="max-w-4xl mx-auto space-y-10">
-          {schedule.map((session) => (
+          {schedule.map((session) => session.activities ? (
             <div key={session.title}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5">
                 <h3 className="font-display text-2xl text-accent">
@@ -397,19 +401,17 @@ const Index = () => {
                 ))}
               </div>
             </div>
+          ) : (
+            <Card key={session.title} className="p-5 bg-gradient-parchment border-accent/40">
+              <h3 className="font-display text-lg text-accent mb-1">
+                {session.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">{session.desc}</p>
+            </Card>
           ))}
-          <Card className="p-5 bg-gradient-parchment border-accent/40">
-            <h3 className="font-display text-lg text-accent mb-1">
-              Optional break activity
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Participants are invited to share and play-test AI-native games
-              or character experiences in an informal peer-feedback session.
-            </p>
-          </Card>
         </div>
         <p className="text-center text-sm text-muted-foreground mt-8">
-          The workshop will run as two consecutive 90-minute sessions.
+          The workshop will run as two 90-minute sessions with a break in between.
           Workshop date and room will be confirmed by CHI 2027.
         </p>
       </section>
