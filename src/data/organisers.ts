@@ -39,6 +39,7 @@ export const organisers: Organiser[] = [
       linkedin: "https://www.linkedin.com/in/vishal-joshi-4a26151b6/",
       orcid: "https://orcid.org/0009-0001-9716-409X",
       website: "https://biglab.co.uk/member/vishal-joshi/",
+      scholar: "https://scholar.google.com/citations?user=XsIcZxYAAAAJ&hl=en",
     },
   },
   {
@@ -79,6 +80,7 @@ export const organisers: Organiser[] = [
       orcid: "https://orcid.org/0000-0002-5108-5740",
       scholar: "https://scholar.google.com/citations?user=LPP8dHwAAAAJ&hl=en",
       website: "https://research.tuni.fi/gameful-realities/gamification-group/",
+      linkedin: "https://www.linkedin.com/in/emma-jane-pretty/",
     },
   },
   {
@@ -105,7 +107,8 @@ export const organisers: Organiser[] = [
     links: {
       orcid: "https://orcid.org/0000-0003-0076-6703",
       scholar: "https://scholar.google.com/citations?user=9j30OywAAAAJ&hl=de",
-      website: "https://researcher.itu.dk/p/en/persons/elisa-mekler"
+      website: "https://researcher.itu.dk/p/en/persons/elisa-mekler",
+      linkedin: "https://www.linkedin.com/in/elisa-mekler-95937b1b9/",
     },
   },
   {
@@ -118,7 +121,8 @@ export const organisers: Organiser[] = [
     links: {
       orcid: "https://orcid.org/0000-0002-2823-420X",
       website: "https://www.chrisbevan.co.uk/",
-      scholar: "https://scholar.google.com/citations?user=oeU9peMAAAAJ&hl=en"
+      scholar: "https://scholar.google.com/citations?user=oeU9peMAAAAJ&hl=en",
+      linkedin: "https://www.linkedin.com/in/chris-bevan-058b47250/",
     },
   },
   {
@@ -130,7 +134,7 @@ export const organisers: Organiser[] = [
     bio: "Yun-Gyung is a Professor of AI at Sungkyunkwan University whose research focuses on game AI, computational storytelling, story generation, AI planning, and natural language processing. Her work contributes longstanding expertise in computational models of narrative, character behaviour, and interactive storytelling.",
     links: {
       orcid: "https://orcid.org/0000-0001-6329-8439",
-      scholar: "https://scholar.google.com/citations?user=yhfGHeIAAAAJ&hl=en"
+      scholar: "https://scholar.google.com/citations?user=yhfGHeIAAAAJ&hl=en",
     },
   },
   {
@@ -142,6 +146,7 @@ export const organisers: Organiser[] = [
     bio: "Younbo is an Associate Professor at Nanyang Technological University whose research examines interactive media, virtual characters, and human-computer interaction. His work contributes perspectives on perceived authenticity and users' responses to AI-driven characters.",
     links: {
       orcid: "https://orcid.org/0000-0002-2588-4557",
+      scholar: "https://scholar.google.com/citations?user=pbKe_0EAAAAJ&hl=en"
     },
   },
   {
@@ -168,7 +173,8 @@ export const organisers: Organiser[] = [
     links: {
       orcid: "https://orcid.org/0000-0003-0033-2104",
       scholar: "https://scholar.google.com/citations?user=BvHFgSwAAAAJ&hl=en",
-      website: "https://codingconduct.cc/"
+      website: "https://codingconduct.cc/",
+      linkedin: "https://www.linkedin.com/in/sebastiandeterding/",
     },
   },
   {
@@ -181,7 +187,8 @@ export const organisers: Organiser[] = [
     links: {
       orcid: "https://orcid.org/0000-0002-4140-6539",
       linkedin: "https://www.linkedin.com/in/richardcolegamingaudiences/",
-      scholar: "https://scholar.google.com/citations?user=XGVPtGUAAAAJ&hl=en"
+      scholar: "https://scholar.google.com/citations?user=XGVPtGUAAAAJ&hl=en",
+
     },
   },
 ];
